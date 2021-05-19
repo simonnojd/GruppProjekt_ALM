@@ -15,5 +15,6 @@ import java.util.List;
  */
 @Repository
 public interface TeacherRepository extends CrudRepository<Teacher, Integer> {
-
+    @Override
+    public List<Teacher> findAll();
 }
