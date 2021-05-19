@@ -16,5 +16,4 @@ import java.util.List;
 @Repository
 public interface TeacherRepository extends CrudRepository<Teacher, String> {
 
-    List<Teacher> findTeacherByCanTeach(boolean canTeach);
 }

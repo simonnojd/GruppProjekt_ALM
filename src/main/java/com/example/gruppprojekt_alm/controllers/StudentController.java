@@ -1,4 +1,75 @@
 package com.example.gruppprojekt_alm.controllers;
 
+
+import com.example.gruppprojekt_alm.models.Student;
+import com.example.gruppprojekt_alm.repositories.StudentRepository;
+import com.example.gruppprojekt_alm.services.StudentService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RequiredArgsConstructor
+@RestController
+@RequestMapping(path = "/student/")
 public class StudentController {
+
+    private final StudentService service;
+
+
+    @PostMapping(path = "/add")
+    public @ResponseBody String addStudent(@RequestParam String name, @RequestParam String birthday, @RequestParam String address, @RequestParam String mail){
+
+        Student s = new Student();
+        s.setName(name);
+        s.setBirthday(birthday);
+        s.setAdress(address);
+        s.setMail(mail);
+
+        service.saveStudent(s);
+
+
+        return "Student added!";
+    }
+
+
+    @GetMapping(path = "/showAll")
+    public @ResponseBody
+    Iterable<Student> showAllStudents(){
+
+
+
+        return service.getAllStudents();
+    }
+
+    @DeleteMapping(path = "/deleteAll")
+    public @ResponseBody String deleteAll(){
+
+        service.deleteAllStudents();
+
+        return "All students are deleted!";
+    }
+
+
+    @PatchMapping(path = "/update")
+    public @ResponseBody String updateStudent(@RequestParam int id,
+                                              @RequestParam String name,
+                                              @RequestParam String adress,
+                                              @RequestParam String mail){
+
+        service.updateStudent(id,name,adress,mail);
+
+        return "Student updated!";
+    }
+
+
+    @DeleteMapping(path = "/delete")
+    public @ResponseBody String deleteStudent(@RequestParam int id){
+
+        service.deleteStudentById(id);
+
+        return "Student deleted!";
+    }
+
 }
