@@ -14,6 +14,6 @@ import java.util.List;
  * Copyright: MIT
  */
 @Repository
-public interface TeacherRepository extends CrudRepository<Teacher, String> {
+public interface TeacherRepository extends CrudRepository<Teacher, Integer> {
 
 }
