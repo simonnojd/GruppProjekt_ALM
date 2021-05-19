@@ -19,8 +19,8 @@ public class TeacherService {
         return (List<Teacher>) repository.findAll();
     }
 
-    public void saveTeacher(Teacher teacher){
-        repository.save(teacher);
+    public Teacher saveTeacher(Teacher teacher){
+        return repository.save(teacher);
     }
 
     public void deleteAllTeachers(){
