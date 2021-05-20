@@ -1,4 +1,4 @@
-package com.example.gruppprojekt_alm;
+package com.example.gruppprojekt_alm.services;
 
 import com.example.gruppprojekt_alm.models.Teacher;
 import com.example.gruppprojekt_alm.repositories.TeacherRepository;

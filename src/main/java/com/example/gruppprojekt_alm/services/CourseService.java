@@ -25,8 +25,8 @@ public class CourseService {
         return courseRepository.findAll();
     }
     
-    public void saveCourse (Course course){
-        courseRepository.save(course);
+    public Course saveCourse (Course course){
+        return courseRepository.save(course);
     }
 
     public void updateCourse (int id, String name){
