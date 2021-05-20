@@ -22,9 +22,9 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class CourseServiceTest {
 
-    @Mock
     private CourseService courseService;
-    private CourseRepository courseRepository;
+    @Mock
+    CourseRepository courseRepository;
 
     @BeforeEach
     public void init () {
@@ -34,8 +34,7 @@ class CourseServiceTest {
     @DisplayName("Getting all courses")
     @Test
     public void getAllCoursesTest() {
-        assertEquals(courseRepository.findAll(),
-                     courseService.getAllCourses());
+        assertEquals(courseRepository.findAll(), courseService.getAllCourses());
     }
 
     @DisplayName("Save a new course")
