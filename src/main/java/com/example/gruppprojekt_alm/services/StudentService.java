@@ -20,9 +20,10 @@ public class StudentService {
         return (List<Student>) repository.findAll();
     }
 
-    public void saveStudent(Student student){
+    public Student saveStudent(Student student){
 
         repository.save(student);
+        return student;
     }
 
     public void deleteAllStudents(){
