@@ -2,6 +2,7 @@ package com.example.gruppprojekt_alm.repositories;
 
 import com.example.gruppprojekt_alm.models.Course;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * Project: GruppProjekt_ALM
  * Copyright: MIT
  */
+@Repository
 public interface CourseRepository extends CrudRepository <Course, Integer> {
     @Override
     public List<Course> findAll();
