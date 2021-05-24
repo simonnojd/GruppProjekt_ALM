@@ -1,6 +1,7 @@
 package com.example.gruppprojekt_alm.repositories;
 
 import com.example.gruppprojekt_alm.models.Course;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +15,7 @@ import java.util.List;
  * Copyright: MIT
  */
 @Repository
-public interface CourseRepository extends CrudRepository <Course, Integer> {
+public interface CourseRepository extends MongoRepository<Course, Integer> {
     @Override
-    public List<Course> findAll();
+    List<Course> findAll();
 }
