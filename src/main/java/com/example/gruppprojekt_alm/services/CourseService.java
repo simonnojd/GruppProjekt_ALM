@@ -1,7 +1,6 @@
 package com.example.gruppprojekt_alm.services;
 
 import com.example.gruppprojekt_alm.models.Course;
-import com.example.gruppprojekt_alm.models.Student;
 import com.example.gruppprojekt_alm.repositories.CourseRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -29,14 +28,14 @@ public class CourseService {
         return courseRepository.save(course);
     }
 
-    public void updateCourse (int id, String name){
+    public void updateCourse (String id, String name){
         Course c = courseRepository.findById(id).get();
         c.setName(name);
 
         courseRepository.save(c);
     }
 
-    public void deleteCourseById (int id) {
+    public void deleteCourseById (String id) {
         courseRepository.deleteById(id);
     }
 }

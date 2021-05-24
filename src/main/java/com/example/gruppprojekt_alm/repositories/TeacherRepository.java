@@ -1,10 +1,12 @@
 package com.example.gruppprojekt_alm.repositories;
 
 import com.example.gruppprojekt_alm.models.Teacher;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Christoffer Grännby
@@ -14,7 +16,6 @@ import java.util.List;
  * Copyright: MIT
  */
 @Repository
-public interface TeacherRepository extends CrudRepository<Teacher, Integer> {
-    @Override
-    public List<Teacher> findAll();
+public interface TeacherRepository extends MongoRepository<Teacher, String> {
+
 }
