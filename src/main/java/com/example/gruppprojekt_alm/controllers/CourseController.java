@@ -36,7 +36,7 @@ public class CourseController {
     }
 
     @PatchMapping(path="/update")
-    public @ResponseBody String updateCourse (@RequestParam int id,
+    public @ResponseBody String updateCourse (@RequestParam String id,
                                               @RequestParam String name){
         courseService.updateCourse(id, name);
 
@@ -44,7 +44,7 @@ public class CourseController {
     }
 
     @DeleteMapping (path="/deleteById")
-    public @ResponseBody String deleteCourse (@RequestParam int id){
+    public @ResponseBody String deleteCourse (@RequestParam String id){
         courseService.deleteCourseById(id);
 
         return "Course deleted";

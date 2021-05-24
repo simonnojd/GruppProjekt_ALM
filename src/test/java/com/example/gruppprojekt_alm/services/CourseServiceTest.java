@@ -41,7 +41,7 @@ class CourseServiceTest {
     @Test
     public void saveNewCourse() {
         Course course = new Course();
-        course.setId(1);
+        course.setId("1");
         course.setName("Geografi");
 
         when(courseRepository.save(any())).thenReturn(course);

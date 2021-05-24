@@ -27,7 +27,7 @@ public class TeacherService {
         repository.deleteAll();
     }
 
-    public void updateTeacher(int id, String name, String adress, String mail){
+    public void updateTeacher(String id, String name, String adress, String mail){
         Teacher t = repository.findById(id).get();
         t.setName(name);
         t.setAdress(adress);
@@ -35,7 +35,7 @@ public class TeacherService {
         repository.save(t);
     }
 
-    public void deleteTeacherById(int id){
+    public void deleteTeacherById(String id){
        repository.deleteById(id);
     }
 }

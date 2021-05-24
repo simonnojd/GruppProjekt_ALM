@@ -33,7 +33,7 @@ public class TeacherController {
     }
 
     @PatchMapping(path = "/update")
-    public @ResponseBody String updateTeacher(@RequestParam int id,
+    public @ResponseBody String updateTeacher(@RequestParam String id,
                                               @RequestParam String name,
                                               @RequestParam String adress,
                                               @RequestParam String mail){
@@ -42,7 +42,7 @@ public class TeacherController {
     }
 
     @DeleteMapping(path = "/delete")
-    public @ResponseBody String deleteTeacher(@RequestParam int id){
+    public @ResponseBody String deleteTeacher(@RequestParam String id){
         service.deleteTeacherById(id);
         return "Teacher with id: " + id + " got deleted!";
     }

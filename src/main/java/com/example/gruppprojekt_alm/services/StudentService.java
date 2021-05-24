@@ -17,7 +17,7 @@ public class StudentService {
 
     public List<Student> getAllStudents(){
 
-        return (List<Student>) repository.findAll();
+        return repository.findAll();
     }
 
     public Student saveStudent(Student student){
@@ -31,7 +31,7 @@ public class StudentService {
         repository.deleteAll();
     }
 
-    public void updateStudent(int id, String name, String adress, String mail){
+    public void updateStudent(String id, String name, String adress, String mail){
 
         Student s = repository.findById(id).get();
         s.setName(name);
@@ -42,7 +42,7 @@ public class StudentService {
 
     }
 
-    public void deleteStudentById(int id){
+    public void deleteStudentById(String id){
 
        repository.deleteById(id);
     }

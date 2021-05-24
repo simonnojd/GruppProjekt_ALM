@@ -14,7 +14,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 public class Student {
 
-    private int id;
+    private String id;
     private String name;
     private String birthday;
     private String adress;

@@ -15,7 +15,6 @@ import java.util.List;
  * Copyright: MIT
  */
 @Repository
-public interface CourseRepository extends MongoRepository<Course, Integer> {
-    @Override
-    List<Course> findAll();
+public interface CourseRepository extends MongoRepository<Course, String> {
+
 }

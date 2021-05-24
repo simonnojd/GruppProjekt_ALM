@@ -46,7 +46,7 @@ public class StudentController {
 
 
     @PatchMapping(path = "/update")
-    public @ResponseBody String updateStudent(@RequestParam int id,
+    public @ResponseBody String updateStudent(@RequestParam String id,
                                               @RequestParam String name,
                                               @RequestParam String adress,
                                               @RequestParam String mail){
@@ -58,7 +58,7 @@ public class StudentController {
 
 
     @DeleteMapping(path = "/delete")
-    public @ResponseBody String deleteStudent(@RequestParam int id){
+    public @ResponseBody String deleteStudent(@RequestParam String id){
 
         service.deleteStudentById(id);
 
