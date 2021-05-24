@@ -23,9 +23,7 @@ public class CourseController {
     private final CourseService courseService;
 
     @PostMapping (path="/add")
-    public @ResponseBody String addCourse (@RequestParam String name){
-        Course course = new Course();
-        course.setName(name);
+    public @ResponseBody String addCourse (@RequestBody Course course){
 
         courseService.saveCourse(course);
 

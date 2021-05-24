@@ -13,13 +13,10 @@ public class TeacherController {
     private final TeacherService service;
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addTeacher(@RequestParam String name, @RequestParam String birthday, @RequestParam String address, @RequestParam String mail) {
-        Teacher t = new Teacher();
-        t.setName(name);
-        t.setBirthday(birthday);
-        t.setAdress(address);
-        t.setMail(mail);
-        service.saveTeacher(t);
+    public @ResponseBody String addTeacher(@RequestBody Teacher teacher) {
+
+        service.saveTeacher(teacher);
+
         return "Teacher added!";
     }
 
