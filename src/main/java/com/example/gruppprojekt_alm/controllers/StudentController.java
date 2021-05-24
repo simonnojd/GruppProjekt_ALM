@@ -19,16 +19,9 @@ public class StudentController {
 
 
     @PostMapping(path = "/add")
-    public @ResponseBody String addStudent(@RequestParam String name, @RequestParam String birthday, @RequestParam String address, @RequestParam String mail){
+    public @ResponseBody String addStudent(@RequestBody Student student){
 
-        Student s = new Student();
-        s.setName(name);
-        s.setBirthday(birthday);
-        s.setAdress(address);
-        s.setMail(mail);
-
-        service.saveStudent(s);
-
+        service.saveStudent(student);
 
         return "Student added!";
     }
