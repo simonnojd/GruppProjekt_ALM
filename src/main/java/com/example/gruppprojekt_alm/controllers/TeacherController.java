@@ -5,6 +5,8 @@ import com.example.gruppprojekt_alm.services.TeacherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @RestController
 @RequestMapping(path = "/teacher/")
@@ -22,7 +24,7 @@ public class TeacherController {
 
     @GetMapping(path = "/showAll")
     public @ResponseBody
-    Iterable<Teacher> showAllTeachers(){
+    List<Teacher> showAllTeachers(){
         return service.getAllTeachers();
     }
 

@@ -5,6 +5,8 @@ services:
     image: mongo
     ports:
       - 27017:27017
+    volumes:
+      - /data/db
 
   mongo-express:
     image: mongo-express
@@ -21,6 +23,6 @@ services:
       DB_HOST: mongo
       DB_PORT: 27017
       DB_NAME: db-prod
-      SPRING_PROFILE_ACTIVE: prod
+      SPRING_PROFILES_ACTIVE: prod
     depends_on:
       - mongo

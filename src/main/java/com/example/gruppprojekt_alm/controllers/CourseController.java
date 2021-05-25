@@ -2,7 +2,6 @@ package com.example.gruppprojekt_alm.controllers;
 
 import com.example.gruppprojekt_alm.models.Course;
 import com.example.gruppprojekt_alm.services.CourseService;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

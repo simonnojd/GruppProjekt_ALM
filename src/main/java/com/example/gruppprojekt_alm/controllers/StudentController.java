@@ -2,21 +2,19 @@ package com.example.gruppprojekt_alm.controllers;
 
 
 import com.example.gruppprojekt_alm.models.Student;
-import com.example.gruppprojekt_alm.repositories.StudentRepository;
 import com.example.gruppprojekt_alm.services.StudentService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RequiredArgsConstructor
 @RestController
-@RequestMapping(path = "/student/")
+@RequestMapping(path = "/student")
 public class StudentController {
 
     private final StudentService service;
-
 
     @PostMapping(path = "/add")
     public @ResponseBody String addStudent(@RequestBody Student student){
@@ -26,12 +24,9 @@ public class StudentController {
         return "Student added!";
     }
 
-
     @GetMapping(path = "/showAll")
     public @ResponseBody
-    Iterable<Student> showAllStudents(){
-
-
+    List<Student> showAllStudents(){
 
         return service.getAllStudents();
     }
