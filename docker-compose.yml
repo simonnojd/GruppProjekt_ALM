@@ -7,11 +7,17 @@ services:
       - 27017:27017
     volumes:
       - /data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root1
+      MONGO_INITDB_ROOT_PASSWORD: password1
 
   mongo-express:
     image: mongo-express
     ports:
       - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root1
+      ME_CONFIG_MONGODB_ADMINPASSWORD: password1
     depends_on:
       - mongo
 
