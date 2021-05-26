@@ -1,6 +1,5 @@
 package com.example.gruppprojekt_alm.services;
 
-
 import com.example.gruppprojekt_alm.models.Teacher;
 import com.example.gruppprojekt_alm.repositories.TeacherRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +12,6 @@ import java.util.List;
 public class TeacherService {
 
     private final TeacherRepository repository;
-
 
     public List<Teacher> getAllTeachers(){
         return repository.findAll();
