@@ -1,5 +1,6 @@
 package com.example.gruppprojekt_alm.services;
 
+import com.example.gruppprojekt_alm.models.Course;
 import com.example.gruppprojekt_alm.models.Student;
 import com.example.gruppprojekt_alm.repositories.StudentRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -55,6 +56,14 @@ class StudentServiceTest {
 
         assertEquals(s, actualStudent);
 
+    }
+
+    @Test
+    public void deleteStudentByIdTest() {
+        Student student = new Student();
+        student.setId("1");
+        service.deleteStudentById(student.getId());
+        assertFalse(repository.existsById("1"));
     }
 
 }

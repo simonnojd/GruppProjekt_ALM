@@ -1,5 +1,6 @@
 package com.example.gruppprojekt_alm.services;
 
+import com.example.gruppprojekt_alm.models.Student;
 import com.example.gruppprojekt_alm.models.Teacher;
 import com.example.gruppprojekt_alm.repositories.TeacherRepository;
 import com.example.gruppprojekt_alm.services.TeacherService;
@@ -11,6 +12,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -46,5 +48,12 @@ public class TeacherServiceTest {
         assertEquals(teacher, actualTeacher);
     }
 
+    @Test
+    public void deleteTeacherByIdTest() {
+        Student student = new Student();
+        student.setId("1");
+        service.deleteTeacherById(student.getId());
+        assertFalse(repository.existsById("1"));
+    }
 
 }
