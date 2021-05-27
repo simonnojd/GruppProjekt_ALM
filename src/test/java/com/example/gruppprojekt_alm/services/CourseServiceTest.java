@@ -49,5 +49,23 @@ class CourseServiceTest {
         Course actualCourse = courseService.saveCourse(course);
         assertEquals(course, actualCourse);
     }
+/*
+    @Test
+    public void updateCourseTest() {
+        Course course = new Course();
+        course.setId("1");
+        course.setName("Geografi");
+        Course expectedCourse = courseService.updateCourse("1", "Matematik");
+        assertEquals(expectedCourse, course);
+    }
+ */
 
+    @Test
+    public void deleteCourseByIdTest() {
+        Course course = new Course();
+        course.setId("1");
+        course.setName("Geografi");
+        courseService.deleteCourseById(course.getId());
+        assertFalse(courseRepository.existsById("1"));
+    }
 }
