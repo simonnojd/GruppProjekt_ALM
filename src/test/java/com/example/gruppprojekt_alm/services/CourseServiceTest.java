@@ -50,4 +50,31 @@ class CourseServiceTest {
         assertEquals(course, actualCourse);
     }
 
+    @Test
+    public void updateCourseTest() {
+        Course course = new Course();
+        course.setId("1");
+        course.setName("Geografi");
+
+        Course expectedCourse = new Course("1","Geografi");
+        Course actualCourse = courseService.updateCourse(course.getId(), course.getName());
+
+        when(courseRepository.findById(any())).thenReturn(java.util.Optional.of(expectedCourse));
+
+        assertEquals(expectedCourse, actualCourse);
+
+        verify(courseRepository.findById(any()));
+
+    }
+
+    @Test
+    public void deleteCourseByIdTest() {
+        Course course = new Course();
+        course.setId("1");
+        course.setName("Geografi");
+
+        courseService.deleteCourseById("1");
+        courseRepository.deleteById(course.getId());
+        verify(courseRepository.deleteById(course.getId()));
+    }
 }

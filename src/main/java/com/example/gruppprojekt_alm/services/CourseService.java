@@ -28,11 +28,11 @@ public class CourseService {
         return courseRepository.save(course);
     }
 
-    public void updateCourse (String id, String name){
+    public Course updateCourse (String id, String name){
         Course c = courseRepository.findById(id).get();
         c.setName(name);
 
-        courseRepository.save(c);
+        return courseRepository.save(c);
     }
 
     public void deleteCourseById (String id) {
